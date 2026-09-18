@@ -1,0 +1,76 @@
+.con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.con .profilePic{
+    width: 150px;
+    height: 150px;
+    margin-left: 30%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 6%;
+}
+
+.success {
+    color: rgb(6, 244, 73);
+    font-weight: 500;
+    text-align: center;
+}
+
+.error{
+    color: red;
+    font-weight: 600;
+}
+
+
+form {
+    width: 400px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+form input[type='file'] {
+    cursor: pointer;
+}
+
+form button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #C49A6C;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #8e6941;
+} 
+
+

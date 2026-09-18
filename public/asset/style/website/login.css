@@ -1,0 +1,67 @@
+
+h5 {
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 20px;
+}
+
+.error{
+    color: red;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+
+.wrong {
+    text-align: center;
+    font-weight: 600;
+    color: red;
+    margin-bottom: 15px;
+}
+
+form {
+    width: 40%;
+    padding: 20px;
+    margin-top: 15%;
+    margin-left: 30%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #C49A6C;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #8e6941;
+}
+
+
+form p {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 400;
+}
+
+form p a {
+    font-size: large;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}

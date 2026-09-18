@@ -1,0 +1,77 @@
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+p {
+    text-align: center;
+    color: rgb(15, 223, 15);
+    font-size: large;
+    font-weight: 600;
+}
+
+.error{
+    color: red;
+    font-weight: 600;
+    text-align: left;
+    font-size:large;
+}
+
+form {
+    margin-left: 30%;
+    margin-top: 2%;
+    width: 400px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+form input[type='file'] {
+    cursor: pointer;
+}
+
+form select {
+    width: 100%;
+    padding: 8px;
+    font-weight: 500;
+}
+
+form input[type='submit'] {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #C49A6C;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form input[type='submit']:hover {
+    background-color: #8e6941;
+}  
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+.wall {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #8B4513, #D2B48C);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.wall h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.wall h1 span {
+    color: #764629;
+}
+
+.wall img {
+    width: 250px;
+}
+
+
+.wall p {
+    margin-top: 15px;
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.6;
+}
