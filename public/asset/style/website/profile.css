@@ -20,7 +20,9 @@ h1 {
 
 .success {
     color: rgb(6, 244, 73);
+    margin-bottom: 20px;
     font-weight: 500;
+    font-size: large;
     text-align: center;
 }
 

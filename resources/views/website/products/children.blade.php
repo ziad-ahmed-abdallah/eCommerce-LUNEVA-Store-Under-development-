@@ -28,7 +28,7 @@
                     <h3 class="child-product-name">{{ $child->name }}</h3>
                     <div class="child-product-price">{{ $child->price }} EGP</div>
                     <div class="child-product-size">Size: {{ $child->size }}</div>
-                    <a href="#" class="child-add-btn">Add To Cart</a>
+                    <a href="{{ route('carts.add' , $child->id) }}" class="child-add-btn">Add To Cart</a>
                 </div>
             </div>
         @endforeach

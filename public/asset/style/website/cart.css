@@ -1,0 +1,144 @@
+h2 {
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+
+.success {
+    color: rgb(6, 244, 73);
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: large;
+    text-align: center;
+}
+
+
+.cart-products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 0 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+
+.cart-product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f3f3f3;
+}
+
+
+.cart-product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.cart-img-container {
+    width: 100%;
+    height: 180px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafbfc; 
+}
+
+
+.cart-img-container img {
+    width: 100%;
+    height: 100%;
+    max-height: 180px;
+    object-fit: scale-down; 
+}
+
+
+.cart-card-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+.cart-product-name {
+    font-size: 1rem;
+    margin: 0 0 8px 0;
+}
+
+
+.cart-product-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2b2b2b;
+}
+
+
+.cart-product-size {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+
+.cart-product-quantity {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+.delete-cart {
+    margin-top: auto;
+    background-color: #db3131; 
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.delete-cart:hover {
+    background-color: #ba0000; 
+}
+
+
+.total {
+    max-width: 400px;
+    margin: 40px auto 40px auto;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #334155;
+    font-size: 1.15rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total span {
+    color: #2563eb;
+    font-size: 1.4rem;
+    font-weight: bold;
+}

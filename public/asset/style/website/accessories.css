@@ -1,14 +1,17 @@
 h2 {
     text-align: center;
     margin-top: 7%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     color: #333;
     font-family: Arial, sans-serif;
 }
 
+
 .success {
     color: rgb(6, 244, 73);
+    margin-bottom: 20px;
     font-weight: 500;
+    font-size: large;
     text-align: center;
 }
 

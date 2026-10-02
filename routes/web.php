@@ -26,13 +26,15 @@ Route::controller(WebController::class)->group(function(){
 });
 
 
-Route::controller(AddToCartController::class)->middleware('auth')->name('carts.')->prefix('/carts')->group(function(){
-    Route::get('/index' , 'index')->name('index');
-    Route::get('/add/{product}', 'store')->name('add');
-    Route::patch('/update/{product}', 'update')->name('update');
-    Route::delete('/remove/{product}', 'destroy')->name('remove');
-    Route::delete('/clear', 'clear')->name('clear');
-});
+    Route::controller(AddToCartController::class)->middleware('auth')->name('carts.')
+    ->prefix('/carts')->group(function(){
+        Route::get('/index' , 'index')->name('index');
+        Route::get('/add/{product}', 'store')->name('add');
+        Route::patch('/update/{product}', 'update')->name('update');
+        Route::get('/remove/{product}', 'destroy')->name('remove');
+        Route::delete('/clear', 'clear')->name('clear');   
+        
+    });
 
 
 // Groub of AuthController
