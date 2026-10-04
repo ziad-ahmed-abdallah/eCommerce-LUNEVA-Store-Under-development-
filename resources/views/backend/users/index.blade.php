@@ -7,6 +7,8 @@
 
 @section('content')
 
+    <h1> All users </h1>
+
     <p> 
         @if (session('success'))
             {{ session('success') }}
@@ -19,12 +21,13 @@
         @endif
     </p>
 
-    <h1> All users </h1>
 
-    <form action="{{ route('admin.user.doSearch') }}" method="GET">
-        <input class="search" type="text" name="search" placeholder="Search by Name">
+    <form class="search-box" action="{{ route('admin.user.doSearch') }}" method="GET">
+        <input class="search" type="text" value="{{ request('search') }}" name="search" placeholder="Search by Name">
         <input class="submit" type="submit" value="Search">
     </form>
+
+
 
     <table border="1">
         <thead>
@@ -45,12 +48,12 @@
             <td> {{ $user->role }} </td>
             <td> {{ $user->email }} </td>
         
-            <td> 
-                @if(!$user->image)
-                    User Picture 
-                @endif
-                <img class="avatar" src="{{ asset('storage/images/' . $user->image) }}"> 
-            </td>
+        <td>
+            <img class="avatar"
+                src="{{ $user->image
+                    ? asset('storage/images/' . $user->image)
+                    : asset('storage/images/avatar.jpg') }}">
+        </td>
         
             <td> {{ $user->age }} </td>
         
@@ -71,5 +74,11 @@
         </tr>
     @endforeach
     </table>
-    
+
+
+    <div class="next">
+        {{ $users->links('pagination::bootstrap-4') }}
+    </div>
+
+
 @endsection

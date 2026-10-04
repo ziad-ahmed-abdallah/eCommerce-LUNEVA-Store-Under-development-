@@ -49,7 +49,6 @@ public function store(Request $request, $productId)
 
 
 
-    // 3. تحديث كمية منتج معين في السلة
     public function update(Request $request, $productId)
     {
         $request->validate([
@@ -68,7 +67,6 @@ public function store(Request $request, $productId)
 
 
 
-    // 4. حذف منتج معين من السلة
     public function destroy($productId)
     {
         /** @var \App\Models\User $user */
@@ -81,7 +79,6 @@ public function store(Request $request, $productId)
 
 
 
-    // 5. إفراغ السلة بالكامل
     public function clear()
     {
         /** @var \App\Models\User $user */

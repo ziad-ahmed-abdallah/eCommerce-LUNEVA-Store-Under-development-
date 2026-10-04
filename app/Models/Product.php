@@ -2,14 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 
 class Product extends Model
 {
     public $timestamps = false;
 
     use SoftDeletes;
+
+    use HasFactory , Notifiable;
 
     protected $fillable = [   // alow database to storage new data fome website
         'name',

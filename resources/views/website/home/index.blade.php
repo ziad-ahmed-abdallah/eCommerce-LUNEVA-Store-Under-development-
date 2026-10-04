@@ -13,7 +13,7 @@
 @section('content')
     <div class="wall">
         <img src="{{ asset('asset/images/biglogo.png') }}" alt="">
-        <h1> Welcome to <span style="font-family:serif;" >LUNÉVA</span> store </h1>
-        <p> Your one-stop destination for stylish clothing and accessories for men, women, and kids <br> combining quality, comfort, and the latest fashion trends </p>
+        <h1> Welcome to <span style="font-family:serif;" >LUNÉVA</span> Store </h1>
+        <i> Your one-stop destination for stylish clothing and accessories for men, women and kids combining quality, comfort and the latest fashion trends </i>
     </div>
 @endsection

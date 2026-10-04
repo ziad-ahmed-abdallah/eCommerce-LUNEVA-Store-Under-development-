@@ -7,11 +7,13 @@
 
 @section('content')
 
+    <h1> Products Archive </h1>
+
     @if(session('success'))
         <p> {{ session('success') }} </p>
     @endif
 
-    <h1> Products Archive </h1>
+
 
     <table border="1">
         <thead>

@@ -68,8 +68,10 @@
         
         
             @auth
-                <div class="dropdown">
-                    <img src="{{ asset('storage/images/' . auth()->user()->image) }}"
+            <div class="dropdown">
+                <img src="{{ auth()->user()->image
+                    ? asset('storage/images/' . auth()->user()->image)
+                    : asset('storage/images/avatar.jpg') }}"
                     class="dropdown-toggle rounded-circle"
                     data-bs-toggle="dropdown"
                     width="40"

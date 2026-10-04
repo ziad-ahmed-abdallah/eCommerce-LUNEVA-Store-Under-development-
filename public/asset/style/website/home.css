@@ -24,9 +24,9 @@
 }
 
 
-.wall p {
-    margin-top: 15px;
-    font-size: 18px;
-    max-width: 600px;
+.wall i {
+    font-weight: 600;
+    font-size: 16px;
+    max-width: 580px;
     line-height: 1.6;
 }

@@ -110,3 +110,70 @@ h2 {
 .child-add-btn:hover {
     background-color: #639cb2; 
 }
+
+.next {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.next .pagination {
+    gap: 5px;
+    margin: 0;
+}
+
+.next .page-item {
+    margin: 0;
+}
+
+.next .pagination .page-item.disabled:not(:first-child):not(:last-child) {
+    display: none;
+}
+
+.next .page-link {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ddd;
+    border-radius: 6px !important;
+
+    color: #555;
+    background: #fff;
+    font-size: 12px;
+
+    transition: all 0.2s ease;
+}
+
+.next .page-link:hover {
+    color: #fff;
+    background: #3498db;
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+.next .page-item.active .page-link {
+    color: #fff;
+    background: #3498db;
+    border-color: #3498db;
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+}
+
+.next .page-item.disabled .page-link {
+    color: #aaa;
+    background: #f5f5f5;
+    border-color: #eee;
+}
+
+.next .page-link {
+    min-width: 28px;
+    height: 28px;
+    padding: 0 7px;
+    font-size: 11px;
+    border-radius: 5px !important;
+}

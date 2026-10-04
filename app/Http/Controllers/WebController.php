@@ -20,7 +20,7 @@ class WebController extends Controller
         $menCategory = Category::where('department', 'men')->first();
     
         $men = Product::where('category_id', $menCategory->id)
-            ->orderBy('id', 'asc')->get();
+            ->orderBy('id', 'asc')->paginate(15);
     
         return view('website.products.men', compact('men'));
     }
@@ -31,7 +31,7 @@ class WebController extends Controller
         $womanCategory = Category::where('department' , 'woman')->first();
     
         $women = Product::where('category_id' , $womanCategory->id)
-            ->orderBy('id' , 'asc')->get();
+            ->orderBy('id' , 'asc')->paginate(15);
     
         return view('website.products.woman' , compact('women'));
     }
@@ -42,7 +42,7 @@ class WebController extends Controller
         $childCategory = Category::where('department' , 'children')->first();
     
         $children = Product::where('category_id' , $childCategory->id)
-            ->orderBy('id' , 'asc')->get();
+            ->orderBy('id' , 'asc')->paginate(15);
     
         return view('website.products.children' , compact('children'));
     }
@@ -53,7 +53,7 @@ class WebController extends Controller
         $accessoriesCategory = Category::where('department' , 'accessories')->first();
     
         $accessories = Product::where('category_id' , $accessoriesCategory->id)
-            ->orderBy('id' , 'asc')->get();
+            ->orderBy('id' , 'asc')->paginate(15);
     
         return view('website.products.accessories' , compact('accessories'));
     }

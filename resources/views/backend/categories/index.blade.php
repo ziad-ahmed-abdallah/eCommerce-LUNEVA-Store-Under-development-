@@ -9,13 +9,15 @@
 
 @section('content')
 
+    <h1>Categories</h1>
+
     @if(session('success'))
         <p>
             {{ session('success') }}
         </p>
     @endif
 
-    <h1>Categories</h1>
+
 
 <table border="1">
     <thead>

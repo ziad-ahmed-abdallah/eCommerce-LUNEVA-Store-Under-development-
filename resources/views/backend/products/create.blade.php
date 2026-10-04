@@ -7,11 +7,13 @@
 
 @section('content')
 
+    <h1> Create Product </h1>
+
     @if(session('success'))
     <p> {{ session('success') }} </p>
     @endif
 
-    <h1> Create Product </h1>
+
 
     <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
         @csrf      {{-- token --}}

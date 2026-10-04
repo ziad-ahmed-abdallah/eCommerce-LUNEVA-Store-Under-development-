@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function index()   // go to index view
     {
-        $products = Product::with('category')->orderBy('category_id' , 'asc')->get();
+        $products = Product::with('category')->orderBy('category_id' , 'asc')->paginate(15);
         return view('backend.products.index' , compact('products'));
     }
 
@@ -21,8 +21,7 @@ class ProductController extends Controller
     {
         $products = Product::with('category')->whereHas('category', function ($query) use ($request) {
                 $query->where('department', 'LIKE' , '%' . $request->search . '%');
-            })
-            ->get();
+            })->paginate(15);
     
         return view('backend.products.index', compact('products'));
     }

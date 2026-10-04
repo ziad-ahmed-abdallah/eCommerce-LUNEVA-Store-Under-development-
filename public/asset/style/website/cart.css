@@ -115,13 +115,13 @@ h2 {
 
 
 .delete-cart:hover {
-    background-color: #ba0000; 
+    background-color: #991b1b; 
 }
 
 
 .total {
-    max-width: 400px;
-    margin: 40px auto 40px auto;
+    max-width: 300px;
+    margin: 20px auto;
     padding: 18px 24px;
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     border: 1px solid #e2e8f0;
@@ -129,7 +129,6 @@ h2 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
     font-family: Arial, sans-serif;
-    color: #334155;
     font-size: 1.15rem;
     font-weight: 600;
     display: flex;
@@ -137,8 +136,31 @@ h2 {
     justify-content: space-between;
 }
 
-.total span {
-    color: #2563eb;
-    font-size: 1.4rem;
-    font-weight: bold;
+
+.clear {
+    display: inline-block;
+    background-color: #dc2626;
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.2);
 }
+
+.clear:hover {
+    background-color: #991b1b;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+    transform: translateY(-1px);
+}
+
+
+

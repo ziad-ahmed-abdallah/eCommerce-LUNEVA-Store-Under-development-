@@ -10,14 +10,14 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('id' , 'asc')->get();
+        $users = User::orderBy('id' , 'asc')->paginate(15);
         return view('backend.users.index' , compact('users'));
     }
 
 
     public function doSearch(Request $request) 
     {
-        $users = User::where('name' , 'LIKE' , '%' . $request->search . '%')->get();
+        $users = User::where('name' , 'LIKE' , '%' . $request->search . '%')->paginate(15);
     
         return view('backend.users.index' , compact('users'));
     }

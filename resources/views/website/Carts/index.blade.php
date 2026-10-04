@@ -23,7 +23,7 @@
                 
                 <div class="cart-card-details">
                     <h4 class="cart-product-name">{{ $cartItem->name }}</h4>
-                    <div class="cart-product-price">{{ $cartItem->price }} EGP</div>
+                    <div class="cart-product-price"> {{ $cartItem->price }} EGP</div>
                     <div class="cart-product-size">Size: {{ $cartItem->size }}</div>
                     <div class="cart-product-quantity">quantity: {{ $cartItem->pivot->quantity }}</div>
                     <a href="{{ route('carts.remove' , $cartItem->id) }}" class="delete-cart" onclick="return confirm('are you Sure?')"> Delete item </a>
@@ -31,6 +31,9 @@
             </div>
         @endforeach
     </div>
+
+    <a href="{{ route('carts.clear') }}" class="clear"
+    onclick="return confirm('are you Sure?')"> Delete All Products </a>
 
     <h3 class="total"> Total Price : {{ $total }} EGP </h3>
 

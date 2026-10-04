@@ -6,14 +6,14 @@
 
 @section('content')
 
+    <h1> Create category </h1>
+
     @if(session('success'))
         <p>
             {{ session('success') }}
         </p>
     @endif
 
-
-    <h1> Create category </h1>
 
 
     <form action="{{ route('admin.categories.store') }}" method="POST" >

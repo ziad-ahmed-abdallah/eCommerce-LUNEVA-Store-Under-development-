@@ -7,13 +7,15 @@
 
 @section('content')
 
+    <h1> All Products </h1>
+
     @if(session('success'))
         <p> {{ session('success') }} </p>
     @endif
 
-    <h1> All Products </h1>
 
-    <form action="{{ route('admin.products.doSearch') }}" method="GET">
+
+    <form class="search-box" action="{{ route('admin.products.doSearch') }}" method="GET">
         @csrf
         <input class="search" type="search" name="search" placeholder="Search By Category"> 
         <input class="submit" type="submit" value="Search">
@@ -52,5 +54,9 @@
     @endforeach
     </table>
 
-    <button class="btn btn-primary"> <a href="{{ route('admin.products.create') }}"> Add Products </a> </button>
+    <div class="next">
+        {{ $products->links('pagination::bootstrap-4') }}
+    </div>
+
+    {{-- <button class="btn btn-primary"> <a href="{{ route('admin.products.create') }}"> Add Products </a> </button> --}}
 @endsection

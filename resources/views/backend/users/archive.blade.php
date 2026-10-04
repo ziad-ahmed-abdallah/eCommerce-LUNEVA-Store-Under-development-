@@ -7,13 +7,13 @@
 
 @section('content')
 
+    <h1> Archive </h1>
+
     <p> 
         @if (session('success'))
             {{ session('success') }}
         @endif
     </p>
-
-    <h1> Archive </h1>
 
     <table border="1">
         <thead>
@@ -34,12 +34,12 @@
             <td> {{ $user->role }} </td>
             <td> {{ $user->email }} </td>
         
-            <td> 
-                @if(!$user->image)
-                    Null
-                @endif
-                <img src="{{ asset('storage/' . $user->image) }}"  width="70" height="70" style="object-fit:cover;"> 
-            </td>
+        <td>
+            <img class="avatar"
+                src="{{ $user->image
+                    ? asset('storage/images/' . $user->image)
+                    : asset('storage/images/avatar.jpg') }}">
+        </td>
         
             <td> {{ $user->age }} </td>
         

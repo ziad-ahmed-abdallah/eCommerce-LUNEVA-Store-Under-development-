@@ -32,7 +32,7 @@ Route::controller(WebController::class)->group(function(){
         Route::get('/add/{product}', 'store')->name('add');
         Route::patch('/update/{product}', 'update')->name('update');
         Route::get('/remove/{product}', 'destroy')->name('remove');
-        Route::delete('/clear', 'clear')->name('clear');   
+        Route::get('/clear', 'clear')->name('clear');   
         
     });
 

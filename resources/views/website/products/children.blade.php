@@ -34,5 +34,9 @@
         @endforeach
     </div>
 
+    <div class="next">
+        {{ $children->links('pagination::bootstrap-4') }}
+    </div>
+
 @endsection
 

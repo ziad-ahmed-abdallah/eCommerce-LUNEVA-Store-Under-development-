@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use function Laravel\Prompts\alert;
 use function Laravel\Prompts\confirm;
@@ -29,14 +33,13 @@ class AuthController extends Controller
             'phone'    => 'nullable'
         ]);
     
-        // save the image
         $imageName = null;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-        
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-        
-            $image->storeAs('images', $imageName, 'public');
+            $manager = new ImageManager(new Driver());
+            $img = $manager->read($image)->cover(300, 300)->toJpeg(85);
+            Storage::disk('public')->put('images/' . $imageName,(string) $img);
         }
     
         $user = User::create([
@@ -88,17 +91,16 @@ class AuthController extends Controller
     }   
 
 
-    public function editProfile(Request $request) 
+    public function editProfile(Request $request)
     {
         /** @var \App\Models\User $user */
         $user = Auth::user();
-    
         $request->validate([
             'name'     => 'required|string|max:255',
             'email'    => 'required|email|unique:users,email,' . $user->id,
             'password' => 'nullable|min:8|max:20',
-            'image'    => 'nullable',
-            'phone'    => 'nullable|string|max:20'
+            'image'    => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5048',
+            'phone'    => 'nullable|string|max:20',
         ]);
     
         $user->name = $request->name;
@@ -109,12 +111,18 @@ class AuthController extends Controller
             $user->password = Hash::make($request->password);
         }
     
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')) 
+            {
+            if ($user->image && Storage::disk('public')->exists('images/' . $user->image)) {
+                Storage::disk('public')->delete('images/' . $user->image);
+            }
+        
             $image = $request->file('image');
-        
             $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $manager = new ImageManager(new Driver());
+            $img = $manager->read($image)->cover(300, 300)->toJpeg(85);
         
-            $image->storeAs('images', $imageName, 'public');
+            Storage::disk('public')->put('images/' . $imageName,(string) $img);
         
             $user->image = $imageName;
         }
